@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>二十三个实验入门SpringIOC(下) | 青稞</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="青稞博客">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="author" content="pengbin">
+    <meta name="keywords" content="青稞博客，pengbin，Java">
+    
+    <link rel="preload" href="/assets/css/0.styles.f429574a.css" as="style"><link rel="preload" href="/assets/js/app.ca4a5c76.js" as="script"><link rel="preload" href="/assets/js/7.68ce5028.js" as="script"><link rel="preload" href="/assets/js/2.70f78407.js" as="script"><link rel="preload" href="/assets/js/42.35c73e47.js" as="script"><link rel="preload" href="/assets/js/3.53eca6bf.js" as="script"><link rel="prefetch" href="/assets/js/10.f8e3b834.js"><link rel="prefetch" href="/assets/js/11.cb7f5bfe.js"><link rel="prefetch" href="/assets/js/12.17c994e7.js"><link rel="prefetch" href="/assets/js/13.4f7fc9d1.js"><link rel="prefetch" href="/assets/js/14.a726da66.js"><link rel="prefetch" href="/assets/js/15.5e2b11c0.js"><link rel="prefetch" href="/assets/js/16.97b55fe1.js"><link rel="prefetch" href="/assets/js/17.03fa6923.js"><link rel="prefetch" href="/assets/js/18.76e0add0.js"><link rel="prefetch" href="/assets/js/19.fec758f5.js"><link rel="prefetch" href="/assets/js/20.821e2371.js"><link rel="prefetch" href="/assets/js/21.8d19e20e.js"><link rel="prefetch" href="/assets/js/22.0842ed24.js"><link rel="prefetch" href="/assets/js/23.29fd87d4.js"><link rel="prefetch" href="/assets/js/24.9f7994bb.js"><link rel="prefetch" href="/assets/js/25.d3ec7359.js"><link rel="prefetch" href="/assets/js/26.1d98f88e.js"><link rel="prefetch" href="/assets/js/27.3099fb26.js"><link rel="prefetch" href="/assets/js/28.4c6e1bec.js"><link rel="prefetch" href="/assets/js/29.fc29b477.js"><link rel="prefetch" href="/assets/js/30.6ac92f59.js"><link rel="prefetch" href="/assets/js/31.e7fb700e.js"><link rel="prefetch" href="/assets/js/32.0f569e44.js"><link rel="prefetch" href="/assets/js/33.a9283ff2.js"><link rel="prefetch" href="/assets/js/34.17741ef6.js"><link rel="prefetch" href="/assets/js/35.2b2fd760.js"><link rel="prefetch" href="/assets/js/36.92e6584a.js"><link rel="prefetch" href="/assets/js/37.23e6e91a.js"><link rel="prefetch" href="/assets/js/38.e5186903.js"><link rel="prefetch" href="/assets/js/39.9e822b97.js"><link rel="prefetch" href="/assets/js/4.35fd24d3.js"><link rel="prefetch" href="/assets/js/40.56dee8d9.js"><link rel="prefetch" href="/assets/js/41.1980e38d.js"><link rel="prefetch" href="/assets/js/43.ece5d3b7.js"><link rel="prefetch" href="/assets/js/44.f4475005.js"><link rel="prefetch" href="/assets/js/45.6aa9f077.js"><link rel="prefetch" href="/assets/js/46.101fdac6.js"><link rel="prefetch" href="/assets/js/47.6de1ccdb.js"><link rel="prefetch" href="/assets/js/48.089bb693.js"><link rel="prefetch" href="/assets/js/49.83f3535d.js"><link rel="prefetch" href="/assets/js/5.b7e699c0.js"><link rel="prefetch" href="/assets/js/50.3dfa1f86.js"><link rel="prefetch" href="/assets/js/51.86949e58.js"><link rel="prefetch" href="/assets/js/52.b6fafeea.js"><link rel="prefetch" href="/assets/js/53.c8759ff2.js"><link rel="prefetch" href="/assets/js/54.8c653e5a.js"><link rel="prefetch" href="/assets/js/55.55dda35b.js"><link rel="prefetch" href="/assets/js/56.7702a7fa.js"><link rel="prefetch" href="/assets/js/57.4294ace3.js"><link rel="prefetch" href="/assets/js/58.f9876d10.js"><link rel="prefetch" href="/assets/js/59.7723bd50.js"><link rel="prefetch" href="/assets/js/6.d6f9e6a3.js"><link rel="prefetch" href="/assets/js/60.5454dbcf.js"><link rel="prefetch" href="/assets/js/61.aa3314fc.js"><link rel="prefetch" href="/assets/js/62.21b3c749.js"><link rel="prefetch" href="/assets/js/63.8bc62e61.js"><link rel="prefetch" href="/assets/js/64.9f03e7e8.js"><link rel="prefetch" href="/assets/js/65.c314b3ca.js"><link rel="prefetch" href="/assets/js/66.9a56faf3.js"><link rel="prefetch" href="/assets/js/67.28e604f0.js"><link rel="prefetch" href="/assets/js/68.dd8dca42.js"><link rel="prefetch" href="/assets/js/69.f972c80e.js"><link rel="prefetch" href="/assets/js/70.f3114344.js"><link rel="prefetch" href="/assets/js/71.7a2cd038.js"><link rel="prefetch" href="/assets/js/72.dc974191.js"><link rel="prefetch" href="/assets/js/73.eda16e6f.js"><link rel="prefetch" href="/assets/js/74.390e5c53.js"><link rel="prefetch" href="/assets/js/75.7074c4d0.js"><link rel="prefetch" href="/assets/js/76.07c0f165.js"><link rel="prefetch" href="/assets/js/77.e6296690.js"><link rel="prefetch" href="/assets/js/78.62d6c0b8.js"><link rel="prefetch" href="/assets/js/79.b2874ee3.js"><link rel="prefetch" href="/assets/js/8.9f2e2737.js"><link rel="prefetch" href="/assets/js/80.723778f0.js"><link rel="prefetch" href="/assets/js/81.b6a9ef2f.js"><link rel="prefetch" href="/assets/js/82.d1da3d88.js"><link rel="prefetch" href="/assets/js/83.feb7dc89.js"><link rel="prefetch" href="/assets/js/84.0115eb3c.js"><link rel="prefetch" href="/assets/js/9.105ffacc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f429574a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/logo.jpg" alt="青稞" class="logo"> <span class="site-name can-hide">青稞</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Java/Java基础/" class="nav-link">
+  Java基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="MySQL" class="dropdown-title"><span class="title">MySQL</span> <span class="arrow down"></span></button> <button type="button" aria-label="MySQL" class="mobile-dropdown-title"><span class="title">MySQL</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/MySQL/" class="nav-link">
+  MySQL
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring" class="dropdown-title"><span class="title">Spring</span> <span class="arrow down"></span></button> <button type="button" aria-label="Spring" class="mobile-dropdown-title"><span class="title">Spring</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Spring/Spring入门/" class="nav-link">
+  Spring入门
+</a></li><li class="dropdown-item"><!----> <a href="/Spring/Spring注解驱动开发/" class="nav-link">
+  Spring注解驱动开发
+</a></li><li class="dropdown-item"><!----> <a href="/Spring/SpringMVC/" class="nav-link">
+  Spring MVC
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/前端/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/前端/HTML/" class="nav-link">
+  HTML
+</a></li></ul></div></div><div class="nav-item"><a href="/about.html" class="nav-link">
+  About
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Java/Java基础/" class="nav-link">
+  Java基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="MySQL" class="dropdown-title"><span class="title">MySQL</span> <span class="arrow down"></span></button> <button type="button" aria-label="MySQL" class="mobile-dropdown-title"><span class="title">MySQL</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/MySQL/" class="nav-link">
+  MySQL
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Spring" class="dropdown-title"><span class="title">Spring</span> <span class="arrow down"></span></button> <button type="button" aria-label="Spring" class="mobile-dropdown-title"><span class="title">Spring</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Spring/Spring入门/" class="nav-link">
+  Spring入门
+</a></li><li class="dropdown-item"><!----> <a href="/Spring/Spring注解驱动开发/" class="nav-link">
+  Spring注解驱动开发
+</a></li><li class="dropdown-item"><!----> <a href="/Spring/SpringMVC/" class="nav-link">
+  Spring MVC
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/前端/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/前端/HTML/" class="nav-link">
+  HTML
+</a></li></ul></div></div><div class="nav-item"><a href="/about.html" class="nav-link">
+  About
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Spring入门</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Spring/Spring%E5%85%A5%E9%97%A8/" aria-current="page" class="sidebar-link">Spring入门</a></li><li><a href="/Spring/Spring入门/Spring-JdbcTemplate.html" class="sidebar-link">Spring-JdbcTemplate</a></li><li><a href="/Spring/Spring入门/Spring——AOP-上.html" class="sidebar-link">Spring-AOP(上)</a></li><li><a href="/Spring/Spring入门/Spring——AOP-下.html" class="sidebar-link">Spring-AOP(下)</a></li><li><a href="/Spring/Spring入门/Spring——AOP-中.html" class="sidebar-link">Spring-AOP(中)</a></li><li><a href="/Spring/Spring入门/Spring——二十三个实验入门SpringIOC-上.html" class="sidebar-link">二十三个实验入门SpringIOC(上)</a></li><li><a href="/Spring/Spring入门/Spring——二十三个实验入门SpringIOC-下.html" class="active sidebar-link">二十三个实验入门SpringIOC(下)</a></li><li><a href="/Spring/Spring入门/Spring——二十三个实验入门SpringIOC-中.html" class="sidebar-link">二十三个实验入门SpringIOC(中)</a></li><li><a href="/Spring/Spring入门/Spring【源码】——bean的创建.html" class="sidebar-link">一探Spring源码——bean的创建</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><blockquote><p>实验15：通过注解分别创建Dao、Service、Controller★</p> <p>实验16：使用context:include-filter指定扫描包时要包含的类</p> <p>实验17：使用context:exclude-filter指定扫描包时不包含的类</p> <p>实验18：使用@Autowired注解实现根据类型实现自动装配★</p> <p>实验19：如果资源类型的bean不止一个，默认根据@Autowired注解标记的成员变量名作为id查找bean，进行装配★</p> <p>实验20：如果根据成员变量名作为id还是找不到bean，可以使用@Qualifier注解明确指定目标bean的id★</p> <p>实验21：在方法的形参位置使用@Qualifier注解</p> <p>实验22：@Autowired注解的required属性指定某个属性允许不被设置</p> <p>实验23：测试泛型依赖注入★</p></blockquote> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://www.springframework.org/schema/beans<span class="token punctuation">&quot;</span></span>
+       <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">&quot;</span></span>
+       <span class="token attr-name"><span class="token namespace">xmlns:</span>context</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://www.springframework.org/schema/context<span class="token punctuation">&quot;</span></span>
+       <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!--实验23：测试泛型依赖注入★--&gt;</span>
+
+    <span class="token comment">&lt;!--
+        @Autowired、@Resource、@Inject；都是自动装配的意思
+        @Autowired：最强大，Spring自己的注解
+        @Resource：j2ee：Java的标准
+
+        @Resource：扩展性更强，如果我们切换成另外一个容器框架，@Resource还是可以使用的，@Autowired就不行了
+    --&gt;</span>
+
+    <span class="token comment">&lt;!--实验21：在方法的形参位置使用@Qualifier注解--&gt;</span>
+    <span class="token comment">&lt;!--
+        @Target({ElementType.CONSTRUCTOR, ElementType.FIELD, ElementType.METHOD, ElementType.ANNOTATION_TYPE})
+        @Retention(RetentionPolicy.RUNTIME)
+        @Documented
+        public @interface Autowired {
+        可以在方法上使用@Autowired注解(@Qualifier也可以)，而这个方法也会在bean创建的时候自动运行，并且这个方法的每一个参数都会自动注入值
+    --&gt;</span>
+
+    <span class="token comment">&lt;!--实验22：@Autowired注解的required属性指定某个属性允许不被设置--&gt;</span>
+    <span class="token comment">&lt;!--实验20：如果根据成员变量名作为id还是找不到bean，可以使用@Qualifier注解明确指定目标bean的id★--&gt;</span>
+    <span class="token comment">&lt;!--实验19：如果资源类型的bean不止一个，默认根据@Autowired注解标记的成员变量名作为id查找bean，进行装配★--&gt;</span>
+    <span class="token comment">&lt;!--实验18：使用@Autowired注解实现根据类型实现自动装配★--&gt;</span>
+    <span class="token comment">&lt;!--
+        使用@Autowired注解，Spring会自动的为这个属性赋值，它一定是去容器中找到对应的组件
+        @Autowired
+        private BookService bookService;
+        @Autowired原理：
+            ① 先按照类型去容器中找到对应的组件：bookService = ioc.getBean(BookService.class);
+                1)找到一个，就赋值
+                2)没找到，抛异常
+                3)找到多个
+                    ① 按照变量名作为id继续匹配
+                        1)匹配上
+                        2)没有匹配上
+                          没有匹配上是因为我们按照变量名作为id继续匹配的
+                          因此我们可以使用@Qualifier(&quot;bookServiceExt&quot;)指定一个新的id
+                            找到，装配
+                            找不到，报错
+        @Autowired标注的自动装配的属性默认是一定装配上的
+            找到就装配，找不到就祭了
+        我们可以设置@Autowired(required=false)来指定属性可以没有，这是找不到就装配null
+    --&gt;</span>
+
+    <span class="token comment">&lt;!--实验17：使用context:exclude-filter指定扫描包时不包含的类--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>component-scan</span> <span class="token attr-name">base-package</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.atqingke<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!--
+            扫描的时候可以排除一些不要的组件
+             ★ type=&quot;annotation&quot;：指定排除规则，按照注解进行排除，标注了指定注解的组件不要
+                    expression=&quot;&quot;：注解的全类名
+             ★ type=&quot;assignable&quot;：指定排除某个具体的类，按照类排除
+                    expression=&quot;&quot;：类的全类名
+                type=&quot;aspectj&quot;：aspectj表达式
+                type=&quot;custom&quot;：自定义一个TypeFilter；自己写代码决定哪些使用
+                type=&quot;regex&quot;：正则表达式
+        --&gt;</span>
+        <span class="token comment">&lt;!--&lt;context:exclude-filter type=&quot;annotation&quot; expression=&quot;org.springframework.stereotype.Controller&quot;/&gt;--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">context:</span>component-scan</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!--实验16：使用context:include-filter指定扫描包时要包含的类--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>component-scan</span> <span class="token attr-name">base-package</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.atqingke<span class="token punctuation">&quot;</span></span> <span class="token attr-name">use-default-filters</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>false<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!--
+            只扫描哪些组件，默认全部扫描进来
+            使用时一定要禁用默认扫描规则：use-default-filters=&quot;false&quot;
+        --&gt;</span>
+        <span class="token comment">&lt;!--&lt;context:include-filter type=&quot;assignable&quot; expression=&quot;com.atqingke.servlet.BookServlet&quot;/&gt;--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">context:</span>component-scan</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!--实验15：通过注解分别创建Dao、Service、Controller（控制器：控制网站跳转逻辑）★--&gt;</span>
+    <span class="token comment">&lt;!--
+        通过给bean上添加某些注解，可以快速的将bean加入到ioc容器中
+        Ⅰ 某个类上添加上任何一个注解都能快速的将这个组件加入到ioc容器的管理中
+        Ⅱ Spring有四个注解：
+            @Controller：控制器；我们推荐给控制器层（servlet包下的这些）的组件加这个注解
+            @Service：业务逻辑；我们推荐业务逻辑层的组件添加这个注解
+            @Repository：给数据库层（持久化层，dao层）的组件添加这个注解
+            @Component：给不属于以上几层的组件添加这个注解
+        Ⅲ 注解可以随便加，Spring底层不会去验证你的这个组件，时候如你注解所说的就是一个dao层的或者就是一个servlet层的组件
+            我们推荐给各层这样加，是为了给程序员看的
+        Ⅳ 使用解将组件快速的加入到容器中需要几步：
+            ① 给要添加的组件上标四个注解的任何一个
+            ② 告诉Spring，自动扫描加了注解的组件；依赖context名称空间
+            ③ 一定要导入aop包，支持加注解模式的
+        Ⅴ 使用注解加入到容器中的组件，和使用配置加入到容器中的组件行为都是默认一样的
+            ① 组件的id，默认就是组件的类名首字母小写
+            ② 组件的作用域，默认就是单例的
+        Ⅵ 组件的默认行为调整
+            ① 在主键中添加默认的value属性值可以修改组件的id    @Controller(&quot;bookservletcontroller&quot;)
+            ② 在组件上添加@scope注解，可以修改作用域
+    --&gt;</span>
+    <span class="token comment">&lt;!--
+        context:component-scan：自动组件扫描
+        base-package：指定扫描的基础包；把基础包及它下面所有的包的所有加了注解的类，自动的扫描进IOC容器
+    --&gt;</span>
+    <span class="token comment">&lt;!--&lt;context:component-scan base-package=&quot;com.atqingke&quot;/&gt;--&gt;</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Spring/Spring入门/Spring——二十三个实验入门SpringIOC-上.html" class="prev">
+        二十三个实验入门SpringIOC(上)
+      </a></span> <span class="next"><a href="/Spring/Spring入门/Spring——二十三个实验入门SpringIOC-中.html">
+        二十三个实验入门SpringIOC(中)
+      </a>
+      →
+    </span></p></div>  <!----></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.ca4a5c76.js" defer></script><script src="/assets/js/7.68ce5028.js" defer></script><script src="/assets/js/2.70f78407.js" defer></script><script src="/assets/js/42.35c73e47.js" defer></script><script src="/assets/js/3.53eca6bf.js" defer></script>
+  </body>
+</html>
